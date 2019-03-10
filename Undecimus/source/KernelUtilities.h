@@ -28,6 +28,18 @@ typedef struct {
     kptr_t extension_add;
     kptr_t extension_release;
     kptr_t pmap_load_trust_cache;
+    kptr_t paciza_pointer__l2tp_domain_module_start;
+    kptr_t paciza_pointer__l2tp_domain_module_stop;
+    kptr_t l2tp_domain_inited;
+    kptr_t sysctl__net_ppp_l2tp;
+    kptr_t sysctl_unregister_oid;
+    kptr_t mov_x0_x4__br_x5;
+    kptr_t mov_x9_x0__br_x1;
+    kptr_t mov_x10_x3__br_x6;
+    kptr_t kernel_forge_pacia_gadget;
+    kptr_t kernel_forge_pacda_gadget;
+    kptr_t IOUserClient__vtable;
+    kptr_t IORegistryEntry__getRegistryEntryID;
 } offsets_t;
 
 extern offsets_t offs;
