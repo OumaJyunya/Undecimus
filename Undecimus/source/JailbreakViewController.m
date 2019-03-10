@@ -1089,10 +1089,10 @@ void jailbreak()
             _assert(_vnode_put(devVnode) == ERR_SUCCESS, message, true);
             LOG("Successfully cleared dev vnode's si_flags.");
             
-            // Mount system snapshot.
+            // Mount RootFS.
             
-            LOG("Mounting rootfs...");
-            SETMESSAGE(NSLocalizedString(@"Unable to mount rootfs.", nil));
+            LOG("Mounting RootFS...");
+            SETMESSAGE(NSLocalizedString(@"Unable to mount RootFS.", nil));
             NSString *invalidRootMessage = NSLocalizedString(@"RootFS already mounted, delete OTA file from Settings - Storage if present and reboot.", nil);
             _assert(!is_mountpoint("/var/MobileSoftwareUpdate/mnt1"), invalidRootMessage, true);
             const char *rootFsMountPoint = "/private/var/tmp/jb/mnt1";
@@ -1111,7 +1111,7 @@ void jailbreak()
             _assert(runCommand("/sbin/mount", NULL) == ERR_SUCCESS, message, true);
             const char *systemSnapshotLaunchdPath = [@(rootFsMountPoint) stringByAppendingPathComponent:@"sbin/launchd"].UTF8String;
             _assert(waitForFile(systemSnapshotLaunchdPath) == ERR_SUCCESS, message, true);
-            LOG("Successfully mounted rootfs.");
+            LOG("Successfully mounted RootFS.");
             
             // Rename system snapshot.
             
