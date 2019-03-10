@@ -100,7 +100,7 @@ void term_kexecute()
 uint64_t kexecute(uint64_t addr, uint64_t x0, uint64_t x1, uint64_t x2, uint64_t x3, uint64_t x4, uint64_t x5, uint64_t x6)
 {
 #if __arm64e__
-    return kernel_call_7(addr, x0, x1, x2, x3, x4, x5, x6);
+    return kernel_call_7(addr, 7, x0, x1, x2, x3, x4, x5, x6);
 #else
     pthread_mutex_lock(&kexecute_lock);
 
